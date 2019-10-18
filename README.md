@@ -13,13 +13,13 @@ Keys: **D**, **F**, **J**, **K**
 Quit: **Q**
 
 ## Command Line Arguments
-**-h** : Show all command line arguments
+**-h** : To show all the possible command line arguments
 
-**-s [speed]** : Speed of the beatmap (Default: 70)
+**-s [speed]** : To specify the speed of the beatmap (Default: 70)
 
-**-b [beatmap file]** : Path of the .osu beatmap file (Default: ttb.osu)
+**-b [beatmap file]** : To specify the path of the .osu beatmap file (Default: ttb.osu)
 
-**-m [audio file]** : Path of the audio file (Default: ttb.mp3)
+**-m [audio file]** : To specify the path of the audio file (Default: ttb.mp3)
 
 ## Libraries Used
 - [ncurses](https://github.com/mirror/ncurses)
