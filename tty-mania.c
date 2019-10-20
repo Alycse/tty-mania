@@ -43,13 +43,9 @@ int setupLanePos(){
 }
 
 int setupStatBoardDimensions(){
-    //left
     g_statBoardDimensions[0] = g_lanePos[0] - 26;
-    //right
     g_statBoardDimensions[1] = g_lanePos[0] - 4;
-    //top
     g_statBoardDimensions[2] = chartHeight - 18;
-    //bottom
     g_statBoardDimensions[3]  = chartHeight - 10;
 }
 
@@ -525,12 +521,6 @@ int printAccuracyText(char accuracyText[], int color){
 }
 
 int drawStatBoard(){
-
-    //0 = left
-    //1 = right
-    //2 = top
-    //3 = bottom
-
     attron(COLOR_PAIR(statBoardTextColor));
     for(int i = g_statBoardDimensions[0]; i < g_statBoardDimensions[1]; i++){
         move(g_statBoardDimensions[2], i); addch(ACS_BLOCK);
@@ -548,5 +538,4 @@ int drawStatBoard(){
         move(i, g_statBoardDimensions[1] - 1); addch(ACS_BLOCK);
     }
     attroff(COLOR_PAIR(statBoardTextColor));
-
 }
