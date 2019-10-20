@@ -5,7 +5,7 @@ A mania rhythm game for your terminal!
 
 ![Gif Preview](https://github.com/Alycse/tty-mania/blob/master/tty-mania.gif?raw=true)
 
-[Video Preview (YouTube)](https://www.youtube.com/watch?v=pFb9O-W6DsQ)
+[Video Preview (YouTube)](https://youtu.be/3j1i9e-GSaU)
 
 ## Controls
 Keys: **D**, **F**, **J**, **K**
