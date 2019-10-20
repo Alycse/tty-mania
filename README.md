@@ -28,6 +28,6 @@ Quit: **Q**
 ## Note
 This was made exclusively for educational purposes!
 
-This is my first time writing in C and I created this to practice the language.
+This was my first time writing in C and I created this to practice the language.
 
 Feedback is very much welcome! I would love to know if I've done something wrong (or bad!)
