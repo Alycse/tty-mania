@@ -132,7 +132,6 @@ int main(int argc, char **argv){
     bool reachedHitObjects = 0;
     int counter = 0;
     while(fgets(line, sizeof (line), fp) != NULL){
-        mvprintw(2,2,"lol");
         if(reachedHitObjects){
             char *array[128];
             int i = 0;
@@ -403,7 +402,7 @@ int dequeueNote(note **p_p_queuedNotes, int *p_queuedNotesSize, int noteIndex){
 int drawKeyTopLane(int lane){
     attron(COLOR_PAIR(keyTopColor));
     for(int j = *(g_lanePos + (lane * 2)); j <= *(g_lanePos + (lane * 2) + 1); j++){
-        mvprintw(chartHeight-1, j, ""); addch(ACS_BLOCK);
+        move(chartHeight-1, j); addch(ACS_BLOCK);
     }
     attroff(COLOR_PAIR(keyTopColor));
 }
@@ -411,7 +410,7 @@ int drawKeyTopLane(int lane){
 int drawKeyTop(){
     attron(COLOR_PAIR(keyTopColor));
     for(int j = g_lanePos[0]; j <= g_lanePos[7]; j++){
-        mvprintw(chartHeight-1, j, ""); addch(ACS_BLOCK);
+        move(chartHeight-1, j); addch(ACS_BLOCK);
     }
     attroff(COLOR_PAIR(keyTopColor));
 }
@@ -419,8 +418,8 @@ int drawKeyTop(){
 int drawKey(int lane, int color){
     attron(COLOR_PAIR(color));
     for(int j = g_lanePos[lane * 2]; j <= g_lanePos[(lane * 2) + 1]; j++){
-        mvprintw(chartHeight, j, ""); addch(ACS_BLOCK);
-        mvprintw(chartHeight+1, j, ""); addch(ACS_BLOCK);
+        move(chartHeight, j); addch(ACS_BLOCK);
+        move(chartHeight+1, j); addch(ACS_BLOCK);
     }
     attroff(COLOR_PAIR(color));
     return 1;
@@ -435,7 +434,7 @@ int drawNote(int lane, int posY, bool erase){
                 attron(COLOR_PAIR(noteBCColor));
             }
 
-            mvprintw(posY, i, "");
+            move(posY, i);
             addch(ACS_BLOCK);
 
             if(lane == 0 || lane == 3){
@@ -521,7 +520,7 @@ int resetCombo(int *p_playerCombo){
 int printAccuracyText(char accuracyText[], int color){
     attron(COLOR_PAIR(color));
     mvprintw(g_statBoardDimensions[2] + 6,g_statBoardDimensions[0] + 3,blankText);
-    mvprintw(g_statBoardDimensions[2] + 6,g_statBoardDimensions[0] + 3,"%s", accuracyText);
+    mvprintw(g_statBoardDimensions[2] + 6,g_statBoardDimensions[0] + 3, "%s", accuracyText);
     attroff(COLOR_PAIR(color));
 }
 
@@ -534,19 +533,19 @@ int drawStatBoard(){
 
     attron(COLOR_PAIR(statBoardTextColor));
     for(int i = g_statBoardDimensions[0]; i < g_statBoardDimensions[1]; i++){
-        mvprintw(g_statBoardDimensions[2], i, ""); addch(ACS_BLOCK);
+        move(g_statBoardDimensions[2], i); addch(ACS_BLOCK);
     }
     for(int i = g_statBoardDimensions[0]; i < g_statBoardDimensions[1]; i++){
-        mvprintw(g_statBoardDimensions[3], i, ""); addch(ACS_BLOCK);
+        move(g_statBoardDimensions[3], i); addch(ACS_BLOCK);
     }
     for(int i = g_statBoardDimensions[2] + 1; i <= g_statBoardDimensions[3] - 1; i++){
-        mvprintw(i, g_statBoardDimensions[0], ""); addch(ACS_BLOCK);
+        move(i, g_statBoardDimensions[0]); addch(ACS_BLOCK);
         for(int j = g_statBoardDimensions[0] + 1; j < g_statBoardDimensions[1] - 1; j++){
             mvprintw(i, j, " ");
         }
     }
     for(int i = g_statBoardDimensions[2] + 1; i <= g_statBoardDimensions[3] - 1; i++){
-        mvprintw(i, g_statBoardDimensions[1] - 1, ""); addch(ACS_BLOCK);
+        move(i, g_statBoardDimensions[1] - 1); addch(ACS_BLOCK);
     }
     attroff(COLOR_PAIR(statBoardTextColor));
 
