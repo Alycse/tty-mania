@@ -30,4 +30,4 @@ This was made exclusively for educational purposes!
 
 This was my first time writing in C and I created this to practice the language.
 
-Feedback is very much welcome! I would love to know if I've done something wrong (or bad!)
+Feedback is very much welcome! I would love to know if I've done something wrong.
